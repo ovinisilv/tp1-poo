@@ -5,12 +5,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Locadora locadora = new Locadora();
 
-        // Cadastro de filmes
+        // cadastro de filmes
         locadora.adicionarFilme(new Filme("Matrix", 10.0));
         locadora.adicionarFilme(new Filme("Batman", 12.0));
         locadora.adicionarFilme(new Filme("Vingadores", 15.0));
 
-        // Criar usuário
+        // criar usuário
         System.out.print("Digite seu nome: ");
         String nome = sc.nextLine();
 
@@ -20,17 +20,17 @@ public class Main {
 
         Usuario usuario = new Usuario(nome, idade);
 
-        // Mostrar filmes
+        // mostrar filmes
         locadora.mostrarFilmes();
 
-        // Escolher filme
+        // escolher filme
         System.out.print("Qual filme deseja alugar? ");
         String escolha = sc.nextLine();
 
-        // Alugar
+        // alugar
         locadora.alugarFilme(usuario, escolha);
 
-        // Mostrar resultado
+        // mostrar resultado
         usuario.mostrarUsuario();
 
         sc.close();
