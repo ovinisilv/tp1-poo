@@ -8,7 +8,7 @@ public class Locadora {
     }
 
     public void mostrarFilmes() {
-        System.out.println("Filmes disponíveis:");
+        System.out.println("filmes disponíveis:");
         for (Filme f : listaDeFilmes) {
             System.out.println("- " + f.getNomeFilme() + " | R$" + f.getPreco());
         }
@@ -18,10 +18,10 @@ public class Locadora {
         for (Filme f : listaDeFilmes) {
             if (f.getNomeFilme().equalsIgnoreCase(nomeFilme)) {
                 u.setFilme_alugado(f.getNomeFilme());
-                System.out.println("Filme alugado com sucesso!");
+                System.out.println("filme alugado com sucesso");
                 return;
             }
         }
-        System.out.println("Filme não encontrado.");
+        System.out.println("filme não encontrado.");
     }
 }
