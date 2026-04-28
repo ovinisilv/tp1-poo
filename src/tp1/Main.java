@@ -1,33 +1,38 @@
-package tp1;
-
 import java.util.Scanner;
 
-
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Locadora locadora = new Locadora();
 
-        Scanner leitor = new Scanner(System.in);
-        Locadora minhaLocadora = new Locadora();
+        // Cadastro de filmes
+        locadora.adicionarFilme(new Filme("Matrix", 10.0));
+        locadora.adicionarFilme(new Filme("Batman", 12.0));
+        locadora.adicionarFilme(new Filme("Vingadores", 15.0));
 
+        // Criar usuário
+        System.out.print("Digite seu nome: ");
+        String nome = sc.nextLine();
 
-        System.out.println("---------- LOCADORA --------------");
+        System.out.print("Digite sua idade: ");
+        int idade = sc.nextInt();
+        sc.nextLine();
 
-        for(int i = 0; i < 3; i++) {
-            System.out.println("Digite o Nome do Filme");
-            String titulo = leitor.nextLine();
+        Usuario usuario = new Usuario(nome, idade);
 
-            System.out.println("Digite o preço do Filme");
-            int preco = leitor.nextInt();
+        // Mostrar filmes
+        locadora.mostrarFilmes();
 
-            leitor.nextLine();
+        // Escolher filme
+        System.out.print("Qual filme deseja alugar? ");
+        String escolha = sc.nextLine();
 
-            Filme novoFilme = new Filme(titulo, preco);
-            minhaLocadora.adicionarFilme(novoFilme);
+        // Alugar
+        locadora.alugarFilme(usuario, escolha);
 
-        }
+        // Mostrar resultado
+        usuario.mostrarUsuario();
 
-        minhaLocadora.mostrarFilmes();
-
-
+        sc.close();
     }
 }
