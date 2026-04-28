@@ -1,18 +1,27 @@
-package tp1;
 import java.util.ArrayList;
-
-
 
 public class Locadora {
     private ArrayList<Filme> listaDeFilmes = new ArrayList<>();
-    public void adicionarFilme(Filme f){
-        listaDeFilmes.add(f);
+
+    public void adicionarFilme(Filme filme) {
+        listaDeFilmes.add(filme);
     }
 
-    public void mostrarFilmes(){
-        for(Filme filmes:listaDeFilmes){
-            System.out.println("Titulo: "+ filmes.getNomeFilme() + "| Preço: R$ " + filmes.getPreco());
+    public void mostrarFilmes() {
+        System.out.println("Filmes disponíveis:");
+        for (Filme f : listaDeFilmes) {
+            System.out.println("- " + f.getNomeFilme() + " | R$" + f.getPreco());
         }
     }
 
+    public void alugarFilme(Usuario u, String nomeFilme) {
+        for (Filme f : listaDeFilmes) {
+            if (f.getNomeFilme().equalsIgnoreCase(nomeFilme)) {
+                u.setFilme_alugado(f.getNomeFilme());
+                System.out.println("Filme alugado com sucesso!");
+                return;
+            }
+        }
+        System.out.println("Filme não encontrado.");
+    }
 }
