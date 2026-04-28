@@ -24,7 +24,7 @@ public class Main {
         locadora.mostrarFilmes();
 
         // escolher filme
-        System.out.print("Qual filme deseja alugar? ");
+        System.out.print("escolha um filme para alugar ");
         String escolha = sc.nextLine();
 
         // alugar
