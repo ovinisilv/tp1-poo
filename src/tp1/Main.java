@@ -11,10 +11,10 @@ public class Main {
         locadora.adicionarFilme(new Filme("Vingadores", 15.0));
 
         // criar usuário
-        System.out.print("Digite seu nome: ");
+        System.out.print("digite seu nome: ");
         String nome = sc.nextLine();
 
-        System.out.print("Digite sua idade: ");
+        System.out.print("digite sua idade: ");
         int idade = sc.nextInt();
         sc.nextLine();
 
