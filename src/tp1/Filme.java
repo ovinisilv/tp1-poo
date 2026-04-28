@@ -1,34 +1,17 @@
-package tp1;
+public class Filme {
+    private String nomeFilme;
+    private double preco;
 
-//fazer validacoes
+    public Filme(String nomeFilme, double preco) {
+        this.nomeFilme = nomeFilme;
+        this.preco = preco;
+    }
 
-class Filme {
-  private String nomeFilme;
-  private int preco;
+    public String getNomeFilme() {
+        return nomeFilme;
+    }
 
-  public Filme(String nome, int preco) {
-      this.nomeFilme = nome;
-      this.preco = preco;
-  }
-
-
-  public String getNomeFilme() {
-      return nomeFilme;
-  }
-
-  public int getPreco() {
-      return preco;
-  }
-
-  public void setNomeFilme(String nomeFilme) {
-      this.nomeFilme = nomeFilme;
-  }
-
-  public void setPreco(int preco) {
-      if (preco > 0){
-          this.preco = preco;
-      }
-
-  }
-
+    public double getPreco() {
+        return preco;
+    }
 }
